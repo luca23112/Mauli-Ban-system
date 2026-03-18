@@ -1,0 +1,46 @@
+name: MauliBanSystem
+version: 1.0.0
+main: de.mauli.ban.MauliBanSystemPlugin
+api-version: '1.21'
+authors: [ OpenAI ]
+description: Professionelles Bann-System im Netzwerk-Stil
+commands:
+  ban:
+    description: Öffnet das Bann-GUI für einen Spieler
+    usage: /ban <spieler>
+    permission: mauli.ban
+  pban:
+    description: Bannt einen Spieler permanent
+    usage: /pban <spieler> <grund>
+    permission: mauli.ban.permanent
+  tempban:
+    description: Bannt einen Spieler temporär
+    usage: /tempban <spieler> <zeit> <grund>
+    permission: mauli.ban.temp
+  unban:
+    description: Entbannt einen Spieler
+    usage: /unban <spieler>
+    permission: mauli.unban
+  check:
+    description: Zeigt Bann-Infos an
+    usage: /check <spieler>
+    permission: mauli.check
+  history:
+    description: Zeigt die Bann-Historie an
+    usage: /history <spieler>
+    permission: mauli.history
+permissions:
+  mauli.ban:
+    default: op
+  mauli.ban.temp:
+    default: op
+  mauli.ban.permanent:
+    default: op
+  mauli.unban:
+    default: op
+  mauli.check:
+    default: op
+  mauli.history:
+    default: op
+  mauli.notify:
+    default: op
