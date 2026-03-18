@@ -1,0 +1,110 @@
+storage:
+  type: FILE # FILE oder MYSQL
+  ip-storage: false
+  file-name: bans.yml
+  mysql:
+    host: localhost
+    port: 3306
+    database: mauli_bans
+    username: root
+    password: password
+    use-ssl: false
+
+discord:
+  webhook-url: ''
+
+ban-reasons:
+  beleidigung:
+    display-name: '&cBeleidigung'
+    material: PAPER
+    description:
+      - '&7Beleidigendes Verhalten'
+      - '&7gegenüber Spielern oder Team.'
+    default-reason: 'Beleidigung / Toxicity'
+  hacking:
+    display-name: '&4Hacking'
+    material: NETHERITE_SWORD
+    description:
+      - '&7Nutzung unerlaubter Clients'
+      - '&7oder unfairer Vorteile.'
+    default-reason: 'Hacking / Unfaire Vorteile'
+  spam:
+    display-name: '&eSpam'
+    material: BOOK
+    description:
+      - '&7Spam, Chat-Flood oder'
+      - '&7massive Wiederholungen.'
+    default-reason: 'Spam / Chat-Flood'
+  werbung:
+    display-name: '&6Werbung'
+    material: OAK_SIGN
+    description:
+      - '&7Werbung für andere Server'
+      - '&7oder Communities.'
+    default-reason: 'Werbung / Fremdserver'
+  trolling:
+    display-name: '&5Trolling'
+    material: TNT
+    description:
+      - '&7Gezieltes Stören, Griefing'
+      - '&7oder Provokation.'
+    default-reason: 'Trolling / Störung'
+
+durations:
+  - id: 1h
+    display: '&a1 Stunde'
+    duration: '1h'
+    material: CLOCK
+  - id: 12h
+    display: '&a12 Stunden'
+    duration: '12h'
+    material: CLOCK
+  - id: 1d
+    display: '&e1 Tag'
+    duration: '1d'
+    material: CALENDAR
+  - id: 3d
+    display: '&63 Tage'
+    duration: '3d'
+    material: CALENDAR
+  - id: 7d
+    display: '&c7 Tage'
+    duration: '7d'
+    material: CALENDAR
+  - id: perm
+    display: '&4Permanent'
+    duration: 'perm'
+    material: BARRIER
+
+messages:
+  prefix: '&8[&cMauliBan&8] '
+  no-permission: '%prefix%&cDazu hast du keine Rechte.'
+  player-not-found: '%prefix%&cSpieler nicht gefunden.'
+  player-never-joined: '%prefix%&cDieser Spieler hat den Server noch nie betreten.'
+  ban-created: '%prefix%&a%target% wurde erfolgreich gebannt.'
+  ban-removed: '%prefix%&aDer Bann von %target% wurde aufgehoben.'
+  not-banned: '%prefix%&e%target% ist aktuell nicht gebannt.'
+  check-format:
+    - '&8&m------------------------------------------------'
+    - '&cBann-Informationen für &f%target%'
+    - '&7Grund: &f%reason%'
+    - '&7Gebannt von: &f%admin%'
+    - '&7Erstellt am: &f%created_at%'
+    - '&7Läuft ab: &f%expires_at%'
+    - '&7Aktiv: &f%active%'
+    - '&8&m------------------------------------------------'
+  history-header: '&8&m---------------- &cHistorie von %target% &8&m----------------'
+  history-entry: '&8#%index% &7%created_at% &8» &f%reason% &8(&c%admin%&8, &7%duration%&8)'
+  history-empty: '%prefix%&7Keine Bann-Historie vorhanden.'
+  staff-broadcast: '&8[&cBan&8] &f%target% &7wurde von &f%admin% &7für &f%reason% &7(&f%duration%&7) ausgeschlossen.'
+  ban-screen:
+    - '&8▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬'
+    - '&cDu wurdest vom Netzwerk ausgeschlossen!'
+    - ''
+    - '&7Grund: &f%reason%'
+    - '&7Dauer: &f%duration%'
+    - '&7Gebannt von: &f%admin%'
+    - ''
+    - '&8▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬'
+    - '&7Entbannung: &bwww.mauli.net/unban'
+  unban-screen: '&aDein Bann ist abgelaufen. Du kannst wieder joinen.'
